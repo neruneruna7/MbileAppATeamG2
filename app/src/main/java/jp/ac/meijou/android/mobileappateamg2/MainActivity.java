@@ -3,6 +3,7 @@ package jp.ac.meijou.android.mobileappateamg2;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.datastore.preferences.core.PreferencesKeys;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.Calendar;
@@ -32,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
         int wakeUpHour = 0;
         int wakeUpMinute = 0;
 
-        dataStore.get(wakeUpHourPrefKey)
-                .ifPresent(h -> {
-                    wakeUpHour = h;
-                });
+//        dataStore.get(wakeUpHourPrefKey)
+//                .ifPresent(h -> {
+//                    wakeUpHour = h;
+//                });
 
 
 
@@ -48,9 +49,19 @@ public class MainActivity extends AppCompatActivity {
             int nowHour = cal.get(Calendar.HOUR);
             int nowMinute = cal.get(Calendar.MINUTE);
 
+
+//            var intent = new Intent(this, "ニシムラ担当のアクティビティ");
+//            intent.putExtra("hour", 値);
+//            intent.putExtra("minute", 値);
         });
 
         binding.settingButton.setOnClickListener(view -> {
+
+        });
+
+        binding.settingButton.setOnClickListener(view -> {
+            // 片貝くん担当の設定画面に遷移する
+
 
         });
         //futagami
