@@ -32,10 +32,6 @@ public class MainActivity extends AppCompatActivity {
         int wakeUpHour = 0;
         int wakeUpMinute = 0;
 
-        dataStore.get(wakeUpHourPrefKey)
-                .ifPresent(h -> {
-                    wakeUpHour = h;
-                });
 
 
 

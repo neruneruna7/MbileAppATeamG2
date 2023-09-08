@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity">
+
+    <TextView
+        android:id="@+id/zandaka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="残高"
+        android:textSize="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/textView2"
+        android:layout_marginTop="60dp"
+
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="48dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/zandaka"
+        android:textSize="36dp"
+        app:layout_constraintTop_toTopOf="@id/zandaka"
+        app:layout_constraintEnd_toStartOf="@id/pt"
+        android:text="point"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="48dp" />
+
+    <TextView
+        android:id="@+id/pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pt"
+        app:layout_constraintBottom_toBottomOf="@id/zandaka"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textView2"
+        tools:layout_editor_absoluteX="311dp"
+        tools:layout_editor_absoluteY="47dp" />
+
+    <TextView
+        android:id="@+id/settingTime"
+        android:layout_width="106dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="48dp"
+        android:text="設定時間"
+        android:textSize="24dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/zandaka" />
+
+    <EditText
+        android:id="@+id/hour"
+        android:layout_width="120dp"
+        android:layout_height="85dp"
+        app:layout_constraintTop_toBottomOf="@id/settingTime"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/jikan"
+        android:visibility="invisible"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="279dp" />
+
+    <EditText
+        android:id="@+id/minutes"
+        android:layout_width="120dp"
+        android:layout_height="85dp"
+        android:ems="10"
+        app:layout_constraintStart_toEndOf="@id/jikan"
+        app:layout_constraintTop_toTopOf="@id/hour"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible"
+        android:inputType="text"
+        android:text="Name"
+        tools:layout_editor_absoluteX="257dp"
+        tools:layout_editor_absoluteY="278dp" />
+
+    <TextView
+        android:id="@+id/jikan"
+        android:layout_width="44dp"
+        android:layout_height="61dp"
+        android:textSize="40dp"
+        app:layout_constraintTop_toTopOf="@id/hour"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/hour"
+        app:layout_constraintEnd_toStartOf="@id/minutes"
+        android:text=":"
+        tools:layout_editor_absoluteX="198dp"
+        tools:layout_editor_absoluteY="292dp" />
+
+    <Button
+        android:id="@+id/changeButton"
+        android:layout_width="106dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="46dp"
+        android:text="変更"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="638dp" />
+
+    <Button
+        android:id="@+id/decideButton"
+        android:layout_width="125dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="50dp"
+        android:text="決定"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hour" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
