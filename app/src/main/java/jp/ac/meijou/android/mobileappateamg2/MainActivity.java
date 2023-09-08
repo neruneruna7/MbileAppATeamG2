@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
         int wakeUpHour = 0;
         int wakeUpMinute = 0;
 
-//        dataStore.get(wakeUpHourPrefKey)
-//                .ifPresent(h -> {
-//                    wakeUpHour = h;
-//                });
+        int test = dataStore.get(wakeUpHourPrefKey)
+                .ifPresent(h -> {
+                    return h;
+                });
 
 
 
@@ -49,10 +49,14 @@ public class MainActivity extends AppCompatActivity {
             int nowHour = cal.get(Calendar.HOUR);
             int nowMinute = cal.get(Calendar.MINUTE);
 
+            int hour = wakeUpHour - nowHour;
+            int minute = wakeUpMinute - nowMinute;
+
 
 //            var intent = new Intent(this, "ニシムラ担当のアクティビティ");
-//            intent.putExtra("hour", 値);
-//            intent.putExtra("minute", 値);
+//            intent.putExtra("hour", hour);
+//            intent.putExtra("minute",minute);
+
         });
 
         binding.settingButton.setOnClickListener(view -> {
@@ -61,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
         binding.settingButton.setOnClickListener(view -> {
             // 片貝くん担当の設定画面に遷移する
-
-
+            var intent = new Intent(this, SettingActivity.class);
+            startActivity(intent);
         });
         //futagami
         //nishimu
