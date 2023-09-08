@@ -10,46 +10,47 @@
         android:id="@+id/textView"
         android:layout_width="353dp"
         android:layout_height="53dp"
+        android:layout_marginTop="72dp"
         android:text="寝坊！残念でした～～！！"
+        android:textColor="@color/material_dynamic_neutral20"
         android:textSize="29dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="50dp"
-        android:textColor="@color/material_dynamic_neutral20"
-        tools:layout_editor_absoluteY="102dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/backbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="back"
+        android:layout_width="116dp"
+        android:layout_height="68dp"
         android:layout_margin="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="back"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="293dp"
-        tools:layout_editor_absoluteY="650dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/mainasu"
-        android:layout_width="184dp"
-        android:layout_height="67dp"
-        android:text="TextView"
+        android:layout_width="243dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="113dp"
+        android:text="-300"
+        android:textSize="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintEnd_toStartOf="@+id/point"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <TextView
         android:id="@+id/point"
-        android:layout_width="76dp"
-        android:layout_height="55dp"
+        android:layout_width="127dp"
+        android:layout_height="92dp"
+        android:layout_marginEnd="52dp"
         android:text="pt"
+        android:textSize="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/mainasu"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
