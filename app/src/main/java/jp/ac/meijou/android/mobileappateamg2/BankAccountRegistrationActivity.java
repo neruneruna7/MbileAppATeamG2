@@ -20,16 +20,13 @@ public class BankAccountRegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityBankAccountRegistrationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        prefDataStore = PrefDataStore.getInstance(this);
 
         binding.registrationButton.setOnClickListener(view -> {
             var prefkey = PreferencesKeys.stringKey("CreditNumber");
             prefDataStore.set(prefkey, "CreditNumber");
 
-            var intent = new Intent(this, MainActivity.class);
-            intent.putExtra("CreditNumber", binding.enterAccountNumberText.getText().toString());
-            startActivity(intent);
-
-            finish();
+//            finish();
         });
     }
 }
