@@ -33,6 +33,9 @@ public class SettingActivity extends AppCompatActivity {
             var minute = binding.hour.getText().toString();
             binding.hour.setText(minute);
 
+            var point = binding.textView2.getText().toString();
+            binding.hour.setText(point);
+
             prefDataStore = PrefDataStore.getInstance(getApplicationContext());
 
             var wakeUpHourPrefKey = PreferencesKeys.intKey("WakeUpHour");
