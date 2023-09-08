@@ -41,6 +41,7 @@ public class SettingActivity extends AppCompatActivity {
             var wakeUpMinutePrefKey = PreferencesKeys.intKey("WakeUpMinute");
             prefDataStore.set(wakeUpMinutePrefKey, 10);
 
+            finish();
 
         });
     }
