@@ -33,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
         int wakeUpHour = 0;
         int wakeUpMinute = 0;
 
-        int test = dataStore.get(wakeUpHourPrefKey)
-                .ifPresent(h -> {
-                    return h;
-                });
-
+//        int test = dataStore.get(wakeUpHourPrefKey)
+//                .ifPresent(h -> {
+//                    return h;
+//                });
+//
 
 
 
@@ -53,9 +53,10 @@ public class MainActivity extends AppCompatActivity {
             int minute = wakeUpMinute - nowMinute;
 
 
-//            var intent = new Intent(this, "ニシムラ担当のアクティビティ");
-//            intent.putExtra("hour", hour);
-//            intent.putExtra("minute",minute);
+            var intent = new Intent(this, GetupLate.class);
+            intent.putExtra("hour", hour);
+            intent.putExtra("minute",minute);
+            startActivity(intent);
 
         });
 
