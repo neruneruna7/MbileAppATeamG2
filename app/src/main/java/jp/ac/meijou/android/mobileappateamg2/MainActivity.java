@@ -26,8 +26,22 @@ public class MainActivity extends AppCompatActivity {
 
         binding.ptText.setText("0");
 
+        var wakeUpHourPrefKey = PreferencesKeys.intKey("WakeUpHour");
+        var wakeUpMinutePrefKey = PreferencesKeys.intKey("WakeUpMinute");
+
+        int wakeUpHour = 0;
+        int wakeUpMinute = 0;
+
+        dataStore.get(wakeUpHourPrefKey)
+                .ifPresent(h -> {
+                    wakeUpHour = h;
+                });
 
 
+
+
+
+        // 起きたボタン 現在時刻と設定時刻の差を計算し，次の画面に渡す.
         binding.wakeUpButton.setOnClickListener(view -> {
             var cal = Calendar.getInstance();
 
