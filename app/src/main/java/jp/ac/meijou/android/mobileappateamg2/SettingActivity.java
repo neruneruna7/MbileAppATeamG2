@@ -20,10 +20,10 @@ public class SettingActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         prefDataStore = prefDataStore.getInstance(this);
 
-        //binding.changeButton.setOnClickListener(view ->{
-           // var intent = new Intent(this, SubActivity.class);
-           // startActivity(intent);
-        //});
+        binding.changeButton.setOnClickListener(view ->{
+            var intent = new Intent(this, BankAccountRegistrationActivity.class);
+            startActivity(intent);
+        });
 
         binding.decideButton.setOnClickListener(view ->{
 
