@@ -37,6 +37,14 @@ public class GetupLate extends AppCompatActivity {
         Optional.ofNullable(getIntent().getStringExtra("text"))
                 .ifPresent(text -> binding.mainasu.setText(text));
 
+        Intent get_intent = getIntent();
+
+        // とりあえずの初期値に0
+        int late_minute = get_intent.getIntExtra("late_minute", 0);
+
+        binding.mainasu.setText(String.valueOf(late_minute));
+
+
         //PrefDataStore = PrefDataStore.getInstance(this);
 
 

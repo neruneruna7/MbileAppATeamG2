@@ -5,8 +5,10 @@ import androidx.datastore.preferences.core.PreferencesKeys;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.Calendar;
+import java.util.logging.Logger;
 
 import jp.ac.meijou.android.mobileappateamg2.databinding.ActivityMainBinding;
 
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         dataStore = PrefDataStore.getInstance(getApplicationContext());
 
-        binding.ptText.setText("0");
+        binding.ptText.setText("10000");
 
         var wakeUpHourPrefKey = PreferencesKeys.intKey("WakeUpHour");
         var wakeUpMinutePrefKey = PreferencesKeys.intKey("WakeUpMinute");
@@ -33,13 +35,7 @@ public class MainActivity extends AppCompatActivity {
         int wakeUpHour = 0;
         int wakeUpMinute = 0;
 
-//        int test = dataStore.get(wakeUpHourPrefKey)
-//                .ifPresent(h -> {
-//                    return h;
-//                });
-//
-
-
+        int test = dataStore.get(wakeUpHourPrefKey).orElse(0);
 
 
         // 起きたボタン 現在時刻と設定時刻の差を計算し，次の画面に渡す.
@@ -52,10 +48,12 @@ public class MainActivity extends AppCompatActivity {
             int hour = wakeUpHour - nowHour;
             int minute = wakeUpMinute - nowMinute;
 
+            int late_minute = minute + (hour * 60);
+
+            Log.d("late_minute", String.valueOf(late_minute));
 
             var intent = new Intent(this, GetupLate.class);
-            intent.putExtra("hour", hour);
-            intent.putExtra("minute",minute);
+            intent.putExtra("late_minute", late_minute);
             startActivity(intent);
 
         });
